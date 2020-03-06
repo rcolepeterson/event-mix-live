@@ -1,0 +1,31 @@
+.spot-user {
+  display: flex;
+  width: 100%;
+  min-height: 90px;
+}
+
+.spot-user .info {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: -6px;
+}
+
+.spot-user .title {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.spot-user p {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.bigAvatar {
+  /* margin: 10px; */
+  width: 70px !important;
+  height: 70px !important;
+  border: 3px solid #555555;
+}

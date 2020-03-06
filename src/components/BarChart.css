@@ -1,0 +1,27 @@
+.barHolder {
+  position: relative;
+  /* width: 96%; */
+}
+
+.bar {
+  height: 8px;
+  background-color: #bec7bf;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.value {
+  width: 80%;
+  background-color: #000000;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+}
+
+.barLabel {
+  text-transform: capitalize;
+  font-size: 11px;
+  color: #707070;
+  margin-bottom: 2px;
+  margin-top: 0;
+}

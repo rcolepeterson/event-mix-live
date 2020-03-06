@@ -1,0 +1,66 @@
+form {
+  width: 400px;
+}
+form .MuiOutlinedInput-input {
+  padding: 10.5px 14px;
+  color: black;
+  border-radius: 0;
+}
+
+form .MuiSvgIcon-root {
+  fill: black;
+  margin-left: 10px;
+}
+
+.MuiIconButton-root:hover {
+  background-color: transparent;
+}
+
+/* form {
+  width: 90%;
+}
+
+.PrivateNotchedOutline-root-154.MuiOutlinedInput-notchedOutline,
+.PrivateNotchedOutline-root-173.MuiOutlinedInput-notchedOutline,
+.MuiOutlinedInput-notchedOutline {
+  border-radius: 50px !important;
+}
+
+input {
+  border-radius: 50px;
+} */
+
+/* .MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-11 {
+  margin-top: -10px;
+} */
+
+/* .MuiFormControl-root {
+  flex-direction: row;
+} */
+
+/* .MuiOutlinedInput-input {
+  padding-bottom: 7px !important;
+  padding-top: 10px !important;
+}
+
+.MuiInputLabel-outlined {
+  transform: translate(14px, 22px) scale(1) !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 2px solid #464646 !important;
+}
+
+#search-btn {
+  margin-top: 10px;
+}
+
+.back-button {
+  margin-top: 10px;
+} */
+
+/* @media (min-width: 768px) {
+  form {
+    width: 100%;
+  }
+} */

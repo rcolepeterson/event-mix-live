@@ -1,0 +1,32 @@
+.interests {
+  display: flow-root;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.interests .interest {
+  background: #e7ebee;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 20px;
+  line-height: 32px;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 18px;
+  margin-right: 5px;
+}
+
+.lanyardSelector {
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.lanyardSelector img {
+  width: 30px;
+  margin-right: 5px;
+}

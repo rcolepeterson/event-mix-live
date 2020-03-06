@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import * as Constants from './constants';
+
+//import {Loader} from './components/loader';
+import Page404 from './pages/404';
+import {CssBaseline, Container} from '@material-ui/core';
+
 import './App.css';
 
-function App() {
+import HomePage from './pages/Home';
+import DashboardPage from './pages/Dashboard';
+
+const App = ({store}) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container
+        justify="center"
+        maxWidth={false}
+        align="left"
+        disableGutters={true}
+        component="main">
+        <CssBaseline />
+        <Router>
+          <Switch>
+            <Route path={Constants.HOME} exact component={HomePage} />
+            <Route path={Constants.DASH} component={DashboardPage} />
+            <Route component={Page404} />
+          </Switch>
+        </Router>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,25 @@
+.remixHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  /* margin: 10% 0; */
+  min-height: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.remixHolder img {
+  width: 100px;
+}
+
+@media (min-width: 768px) {
+  .remixHolder {
+    align-items: flex-start;
+    margin-left: 90px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

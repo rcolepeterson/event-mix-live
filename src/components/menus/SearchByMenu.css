@@ -1,0 +1,14 @@
+.attrBtn {
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.attrBtn img {
+  width: 220px;
+}
+
+@media (min-width: 768px) {
+  .attrMenuContainer {
+    align-items: flex-start;
+  }
+}

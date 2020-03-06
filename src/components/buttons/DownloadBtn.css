@@ -1,0 +1,13 @@
+.download-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.download-btn img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.download-btn p {
+  margin-top: 0;
+}
