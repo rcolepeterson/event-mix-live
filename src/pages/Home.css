@@ -48,6 +48,12 @@
   height: 400px;
 }
 
+@media (min-width: 1200px) {
+  .hero {
+    width: 70%;
+  }
+}
+
 @media (min-width: 1400px) {
   .hero-image,
   .hero-carousel {
@@ -58,6 +64,7 @@
   }
   .hero {
     min-height: 480px;
+    width: 80%;
   }
   .hero-two {
     width: 100%;

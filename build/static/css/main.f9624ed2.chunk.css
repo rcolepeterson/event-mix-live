@@ -208,6 +208,11 @@ h3 {
   height: 400px;
   background-color: #e5ebee;
 }
+@media (min-width: 1200px) {
+  .hero {
+    width: 70%;
+  }
+}
 @media (min-width: 1400px) {
   .hero-carousel,
   .hero-image {
@@ -218,6 +223,7 @@ h3 {
   }
   .hero {
     min-height: 480px;
+    width: 80%;
   }
   .hero-two {
     width: 100%;
@@ -400,4 +406,4 @@ form .MuiSvgIcon-root {
 .event-mix-white-paper .white-paper {
   margin-top: 30px;
 }
-/*# sourceMappingURL=main.5f20a85d.chunk.css.map */
+/*# sourceMappingURL=main.f9624ed2.chunk.css.map */
