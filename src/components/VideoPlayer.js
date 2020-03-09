@@ -2,7 +2,7 @@ import React from 'react';
 import {convertTimeStampToSeconds} from '../utils';
 import './VideoPlayer.css';
 
-export default ({selVideo, onVideoEnd, initial}) => {
+export default ({selVideo, onVideoEnd, initial, fakeHit}) => {
   const VIDEO_ID = 'vidPlayer';
   const handleCanPlayThrough = event => {
     let vid = document.getElementById(VIDEO_ID);
@@ -41,19 +41,16 @@ export default ({selVideo, onVideoEnd, initial}) => {
   }
 
   return (
-    <div>
-      <div className="video-fake-hit"></div>
-      <video
-        id={VIDEO_ID}
-        key={selVideo.videoStartTime}
-        onLoadedMetadata={handleMetadata}
-        autoPlay
-        controls
-        muted={isMobileDevice()}
-        playsInline
-        onTimeUpdate={handleTimeUpdate}>
-        <source src={selVideo.videoUrl} type="video/mp4" />
-      </video>
-    </div>
+    <video
+      id={VIDEO_ID}
+      key={selVideo.videoStartTime}
+      onLoadedMetadata={handleMetadata}
+      autoPlay
+      controls
+      muted={isMobileDevice()}
+      playsInline
+      onTimeUpdate={handleTimeUpdate}>
+      <source src={selVideo.videoUrl} type="video/mp4" />
+    </video>
   );
 };

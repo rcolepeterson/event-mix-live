@@ -1,11 +1,22 @@
-video {
-  width: 100%;
-  height: auto;
-  background: black;
+.video-container {
+  padding: 60px;
 }
 
-.video-fake-hit {
+.video-container .download-btn {
+  margin-top: 10px;
+}
+
+.video-holder {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  background-color: green;
+}
+.video-holder video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  background: red;
+  height: 100%;
 }

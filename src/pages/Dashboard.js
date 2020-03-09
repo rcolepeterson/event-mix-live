@@ -56,7 +56,9 @@ export default () => {
     } else {
       setState(previousValue => ({
         ...previousValue,
-        documents: documents
+        documents: documents,
+        selVideo: documents.length > 0 ? documents[0].doc.data : '',
+        id: documents.length > 0 ? documents[0].doc.id : ''
       }));
     }
   };
@@ -86,8 +88,7 @@ export default () => {
   /*===============================
   SELECT VIDEO
   ===================*/
-  const onVideoSelect = (videoId, startTime) => {
-    window.startTime = startTime;
+  const onVideoSelect = videoId => {
     let selVideo = getVideoById(videoId)[0].doc.data;
     setState(previousValue => ({
       ...previousValue,
@@ -168,12 +169,14 @@ export default () => {
             {video.itemsLoading && <p style={{marginLeft: 30}}>LOADING ...</p>}
           </Grid>
           <Grid item xs={6}>
-            <div className="video-holder">
-              <VideoPlayer
-                initial={state.initial}
-                selVideo={state.selVideo}
-                onVideoEnd={onVideoEnd}
-              />
+            <div className="video-container">
+              <div className="video-holder">
+                <VideoPlayer
+                  initial={state.initial}
+                  selVideo={state.selVideo}
+                  onVideoEnd={onVideoEnd}
+                />
+              </div>
               <DownloadBtn />
             </div>
           </Grid>
