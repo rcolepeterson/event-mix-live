@@ -32205,7 +32205,7 @@
             )
           );
         },
-        z =
+        V =
           (n(112),
           function(e) {
             var t = e.documents,
@@ -32279,7 +32279,7 @@
                 )
             );
           }),
-        V = n(41),
+        z = n(41),
         F = n(154),
         Z = n(155),
         Y = n(161);
@@ -32298,7 +32298,7 @@
               onChange:
                 ((e = 'checkedB'),
                 function(t) {
-                  r(Object(k.a)({}, a, Object(V.a)({}, e, t.target.checked)));
+                  r(Object(k.a)({}, a, Object(z.a)({}, e, t.target.checked)));
                 }),
               value: 'Sessions Missed',
               color: 'primary'
@@ -32312,42 +32312,38 @@
           var t = e.selVideo,
             n = e.onVideoEnd,
             a = e.initial;
+          e.fakeHit;
           return o.a.createElement(
-            'div',
-            null,
-            o.a.createElement(
-              'video',
-              {
-                id: 'vidPlayer',
-                key: t.videoStartTime,
-                onLoadedMetadata: function(e) {
-                  var n = document.getElementById('vidPlayer');
-                  n.oncanplay = function() {
-                    (n.oncanplay = null),
-                      console.log('canplay'),
-                      (function e(n) {
-                        var o = document.getElementById('vidPlayer'),
-                          r = O(t.videoStartTime);
-                        (o.currentTime = r),
-                          a ? o.pause() : o.play(),
-                          o.removeEventListener('canplay', e);
-                      })();
-                  };
-                },
-                autoPlay: !0,
-                controls: !0,
-                muted:
-                  'undefined' !== typeof window.orientation ||
-                  -1 !== navigator.userAgent.indexOf('IEMobile'),
-                playsInline: !0,
-                onTimeUpdate: function(e) {
-                  var a = document.getElementById('vidPlayer'),
-                    o = O(t.videoEndTime);
-                  a.currentTime >= o && (a.pause(), n());
-                }
+            'video',
+            {
+              id: 'vidPlayer',
+              key: t.videoStartTime,
+              onLoadedMetadata: function(e) {
+                var n = document.getElementById('vidPlayer');
+                n.oncanplay = function() {
+                  (n.oncanplay = null),
+                    (function e(n) {
+                      var o = document.getElementById('vidPlayer'),
+                        r = O(t.videoStartTime);
+                      (o.currentTime = r),
+                        a ? o.pause() : o.play(),
+                        o.removeEventListener('canplay', e);
+                    })();
+                };
               },
-              o.a.createElement('source', {src: t.videoUrl, type: 'video/mp4'})
-            )
+              autoPlay: !0,
+              controls: !0,
+              muted:
+                'undefined' !== typeof window.orientation ||
+                -1 !== navigator.userAgent.indexOf('IEMobile'),
+              playsInline: !0,
+              onTimeUpdate: function(e) {
+                var a = document.getElementById('vidPlayer'),
+                  o = O(t.videoEndTime);
+                a.currentTime >= o && (a.pause(), n());
+              }
+            },
+            o.a.createElement('source', {src: t.videoUrl, type: 'video/mp4'})
           );
         },
         X =
@@ -32384,13 +32380,12 @@
               t = Object(T.a)(e, 2),
               n = t[0],
               a = t[1],
-              r = function(e, t) {
-                window.startTime = t;
-                var n = c(e)[0].doc.data;
-                a(function(t) {
-                  return Object(k.a)({}, t, {
+              r = function(e) {
+                var t = c(e)[0].doc.data;
+                a(function(n) {
+                  return Object(k.a)({}, n, {
                     loading: !1,
-                    selVideo: n,
+                    selVideo: t,
                     id: e,
                     initial: !1
                   });
@@ -32500,7 +32495,12 @@
                                     });
                                   })
                                 : a(function(t) {
-                                    return Object(k.a)({}, t, {documents: e});
+                                    return Object(k.a)({}, t, {
+                                      documents: e,
+                                      selVideo:
+                                        e.length > 0 ? e[0].doc.data : '',
+                                      id: e.length > 0 ? e[0].doc.id : ''
+                                    });
                                   });
                           },
                           disabled: n.searchTerms.length < 1,
@@ -32524,16 +32524,20 @@
                     {item: !0, xs: 6},
                     o.a.createElement(
                       'div',
-                      {className: 'video-holder'},
-                      o.a.createElement(K, {
-                        initial: n.initial,
-                        selVideo: n.selVideo,
-                        onVideoEnd: function() {
-                          var e = i(n.id),
-                            t = n.documents[e].doc.id;
-                          t && r(t);
-                        }
-                      }),
+                      {className: 'video-container'},
+                      o.a.createElement(
+                        'div',
+                        {className: 'video-holder'},
+                        o.a.createElement(K, {
+                          initial: n.initial,
+                          selVideo: n.selVideo,
+                          onVideoEnd: function() {
+                            var e = i(n.id),
+                              t = n.documents[e].doc.id;
+                            t && r(t);
+                          }
+                        })
+                      ),
                       o.a.createElement(x, null)
                     )
                   )
@@ -32544,7 +32548,7 @@
                   o.a.createElement(
                     'div',
                     {className: 'margin-content'},
-                    o.a.createElement(z, {
+                    o.a.createElement(V, {
                       documents: n.documents,
                       onVideoSelect: r
                     })
@@ -32651,4 +32655,4 @@
   },
   [[80, 1, 2]]
 ]);
-//# sourceMappingURL=main.cd3e409a.chunk.js.map
+//# sourceMappingURL=main.1f643187.chunk.js.map

@@ -345,10 +345,25 @@ form .MuiSvgIcon-root {
 .video-menu {
   text-align: left;
 }
-video {
+.video-container {
+  padding: 60px;
+}
+.video-container .download-btn {
+  margin-top: 10px;
+}
+.video-holder {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background-color: green;
+}
+.video-holder video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  background: #000;
+  height: 100%;
 }
 .interests {
   display: flow-root;
@@ -385,10 +400,4 @@ video {
 .event-mix-white-paper .white-paper {
   margin-top: 30px;
 }
-.video-holder {
-  padding: 60px;
-}
-.video-holder .download-btn {
-  margin-top: 10px;
-}
-/*# sourceMappingURL=main.df5d4d46.chunk.css.map */
+/*# sourceMappingURL=main.5f20a85d.chunk.css.map */
