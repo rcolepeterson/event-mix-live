@@ -32,7 +32,7 @@ export default () => {
   });
 
   const video = {eventVideos: []};
-  const search = {searchTerms: []};
+
   /* =================================================================
     Form methods
     ================================================================*/
@@ -45,7 +45,8 @@ export default () => {
 
   const handleRemixClick = () => {
     let documents = searchVideos(state.documents, state.searchTerms);
-    console.log('documents', documents.length);
+    window.searchTermsArray = [...state.searchTerms];
+    console.log(window.searchTermsArray);
     if (documents.length === 0) {
       setState(previousValue => ({
         ...previousValue,

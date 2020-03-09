@@ -16,6 +16,7 @@ export default ({
     id: 1
   },
   onVideoSelect,
+  searchTerms,
   selectedDocId = 100
 }) => {
   const {id, name, topicName, thumbnailId} = document;
@@ -33,6 +34,10 @@ export default ({
     process.env.PUBLIC_URL + `/images/thumbnailsforTED/${videoName}.png`;
 
   let className = id === selectedDocId ? 'videoBox selected' : 'videoBox';
+
+  let barArray = window.searchTermsArray.filter(
+    item => item !== document.strSearchValue
+  );
 
   return (
     <div
@@ -54,8 +59,13 @@ export default ({
         </div>
         <div className="video-stats">
           <Barchart label={document.strSearchValue} relevance={relevance} />
-          <Barchart />
-          <Barchart />
+          {barArray.map(item => {
+            let val = Math.floor(Math.random() * (63 - 1 + 1)) + 1;
+            let randPer = '0.' + val;
+            return <Barchart key={item} label={item} relevance={randPer} />;
+          })}
+
+          <div style={{margin: 30}}></div>
         </div>
       </div>
     </div>

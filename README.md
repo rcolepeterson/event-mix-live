@@ -1,68 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EventMix
 
-## Available Scripts
+Static website built using React.
 
-In the project directory, you can run:
+Azure / Github User: cole.peterson@wundermanthompson.com
 
-### `yarn start`
+### Azure Home
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://portal.azure.com/#home
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Azure project overview
 
-### `yarn test`
+https://portal.azure.com/#@wppcloud.net/resource/subscriptions/f08f719e-c8ed-47b5-9bef-e0015805f28c/resourceGroups/event-mix-resources/providers/Microsoft.Web/sites/event-mix-live-stream/appServices
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Azure Portal deployment page
 
-### `yarn build`
+https://portal.azure.com/#@wppcloud.net/resource/subscriptions/f08f719e-c8ed-47b5-9bef-e0015805f28c/resourceGroups/event-mix-resources/providers/Microsoft.Storage/storageAccounts/eventmixlivestream/overview
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Deploy
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+We are going to track and push the content so fthe build folder.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On push to Master Azure will deploy the content.
 
-### `yarn eject`
+`yarn build`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`git add .`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`git commit -m [your message]`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`git push origin master`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+MAKE SURE U ARE CHECKING IN THE BUILD FOLDER.
 
-## Learn More
+That is what we are deploying to Azure from git hub.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+URL
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://event-mix-live-stream.azurewebsites.net/
 
-### Code Splitting
+### azure deploy tips
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+https://css-tricks.com/deploying-a-client-side-rendered-create-react-app-to-microsoft-azure/
+https://medium.com/microsoftazure/deploying-create-react-app-as-a-static-site-on-azure-dd1330b215a5
 
-### Analyzing the Bundle Size
+MAKE SURE YOU HAVE THE .deployment file included at root.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+````[config]
+project = build```
+````
 
-### Making a Progressive Web App
+MAKE SURE YOU HAVE THE web.config in /public and /build
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+````<?xml version="1.0"?>
+<configuration>
+    <system.webServer>
+        <staticContent>
+            <mimeMap fileExtension=".json" mimeType="application/json" />
+             <mimeMap fileExtension="woff" mimeType="application/font-woff" />
+            <mimeMap fileExtension="woff2" mimeType="application/font-woff" />
+        </staticContent>
+        <rewrite>
+            <rules>
+                <rule name="React Routes" stopProcessing="true">
+                    <match url=".*" />
+                    <conditions logicalGrouping="MatchAll">
+                        <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+                        <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+                        <add input="{REQUEST_URI}" pattern="^/(api)" negate="true" />
+                    </conditions>
+                    <action type="Rewrite" url="/" />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>```
+````
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+todo - bar
