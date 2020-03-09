@@ -137,7 +137,8 @@
                           o.a.createElement('img', {
                             className: 'img-one-hundred',
                             alt: 'hero',
-                            src: '/images/livevideomodules.png'
+                            src:
+                              '/images/livestreamingvideosPlusInviteOption.png'
                           })
                         )
                       )
@@ -32655,4 +32656,4 @@
   },
   [[80, 1, 2]]
 ]);
-//# sourceMappingURL=main.1f643187.chunk.js.map
+//# sourceMappingURL=main.d6d4d979.chunk.js.map

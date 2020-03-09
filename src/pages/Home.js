@@ -84,7 +84,8 @@ export default () => {
                       className="img-one-hundred"
                       alt="hero"
                       src={
-                        process.env.PUBLIC_URL + '/images/livevideomodules.png'
+                        process.env.PUBLIC_URL +
+                        '/images/livestreamingvideosPlusInviteOption.png'
                       }
                     />
                   </div>
