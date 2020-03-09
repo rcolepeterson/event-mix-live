@@ -20,7 +20,6 @@ export default ({selVideo, onVideoEnd, initial}) => {
     const vid = document.getElementById(VIDEO_ID);
     vid.oncanplay = () => {
       vid.oncanplay = null;
-      console.log('canplay');
       handleCanPlayThrough();
     };
   };
@@ -43,6 +42,7 @@ export default ({selVideo, onVideoEnd, initial}) => {
 
   return (
     <div>
+      <div className="video-fake-hit"></div>
       <video
         id={VIDEO_ID}
         key={selVideo.videoStartTime}

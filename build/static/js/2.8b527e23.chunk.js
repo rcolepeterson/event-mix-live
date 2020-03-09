@@ -1,4 +1,4 @@
-/*! For license information please see 2.17fe3b59.chunk.js.LICENSE */
+/*! For license information please see 2.8b527e23.chunk.js.LICENSE */
 (this['webpackJsonpevent-mix-live'] =
   this['webpackJsonpevent-mix-live'] || []).push([
   [2],
@@ -3784,6 +3784,35 @@
     },
     function(e, t, n) {
       'use strict';
+      function r(e) {
+        return (
+          (function(e) {
+            if (Array.isArray(e)) {
+              for (var t = 0, n = new Array(e.length); t < e.length; t++)
+                n[t] = e[t];
+              return n;
+            }
+          })(e) ||
+          (function(e) {
+            if (
+              Symbol.iterator in Object(e) ||
+              '[object Arguments]' === Object.prototype.toString.call(e)
+            )
+              return Array.from(e);
+          })(e) ||
+          (function() {
+            throw new TypeError(
+              'Invalid attempt to spread non-iterable instance'
+            );
+          })()
+        );
+      }
+      n.d(t, 'a', function() {
+        return r;
+      });
+    },
+    function(e, t, n) {
+      'use strict';
       Object.defineProperty(t, '__esModule', {value: !0});
       var r = n(57);
       function i(e) {
@@ -3899,35 +3928,6 @@
       var r = n(0),
         i = n.n(r);
       t.a = i.a.createContext(null);
-    },
-    function(e, t, n) {
-      'use strict';
-      function r(e) {
-        return (
-          (function(e) {
-            if (Array.isArray(e)) {
-              for (var t = 0, n = new Array(e.length); t < e.length; t++)
-                n[t] = e[t];
-              return n;
-            }
-          })(e) ||
-          (function(e) {
-            if (
-              Symbol.iterator in Object(e) ||
-              '[object Arguments]' === Object.prototype.toString.call(e)
-            )
-              return Array.from(e);
-          })(e) ||
-          (function() {
-            throw new TypeError(
-              'Invalid attempt to spread non-iterable instance'
-            );
-          })()
-        );
-      }
-      n.d(t, 'a', function() {
-        return r;
-      });
     },
     function(e, t, n) {
       'use strict';
@@ -5406,7 +5406,7 @@
       (t.getWidthFromDeviceType = i.getWidthFromDeviceType),
         (t.getPartialVisibilityGutter = i.getPartialVisibilityGutter),
         (t.getItemClientSideWidth = i.getItemClientSideWidth);
-      var o = n(27);
+      var o = n(28);
       (t.getInitialState = o.getInitialState),
         (t.getIfSlideIsVisbile = o.getIfSlideIsVisbile),
         (t.getTransformForCenterMode = o.getTransformForCenterMode),
@@ -6205,7 +6205,7 @@
         O = n(14),
         C = n(13),
         T = n(32),
-        j = n(28);
+        j = n(29);
       function P(e, t) {
         var n = Object.create(null);
         return (
@@ -14947,7 +14947,7 @@
         l = n(96),
         u = n(98),
         s = n(99),
-        c = n(27),
+        c = n(28),
         d = 400,
         f = (function(e) {
           function t(t) {
@@ -15571,7 +15571,7 @@
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', {value: !0});
-      var r = n(27);
+      var r = n(28);
       t.populateNextSlides = function(e, t, n) {
         void 0 === n && (n = 0);
         var i,
@@ -15597,8 +15597,8 @@
       'use strict';
       Object.defineProperty(t, '__esModule', {value: !0});
       var r = n(0),
-        i = n(27),
-        o = n(27);
+        i = n(28),
+        o = n(28);
       t.populatePreviousSlides = function(e, t, n) {
         void 0 === n && (n = 0);
         var a,
@@ -15701,7 +15701,7 @@
       var r = n(0),
         i = n(47),
         o = n(97),
-        a = n(27);
+        a = n(28);
       t.default = function(e) {
         var t = e.props,
           n = e.state,
@@ -15773,7 +15773,7 @@
       'use strict';
       Object.defineProperty(t, '__esModule', {value: !0});
       var r = n(47),
-        i = n(27);
+        i = n(28);
       t.getLookupTableForNextSlides = function(e, t, n, o) {
         var a = {},
           l = i.getSlidesToSlide(t, n);
@@ -20648,7 +20648,7 @@
         s = n(9),
         c = n.n(s),
         d = !1,
-        f = n(28),
+        f = n(29),
         p = 'unmounted',
         h = 'exited',
         m = 'entering',
@@ -21725,4 +21725,4 @@
     }
   ]
 ]);
-//# sourceMappingURL=2.17fe3b59.chunk.js.map
+//# sourceMappingURL=2.8b527e23.chunk.js.map

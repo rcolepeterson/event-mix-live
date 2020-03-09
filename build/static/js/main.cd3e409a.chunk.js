@@ -214,7 +214,7 @@
             )
           );
         },
-        _ = n(29),
+        _ = n(27),
         k = n(18),
         T = n(23),
         A = [
@@ -32138,7 +32138,7 @@
                   }
                 : a,
             c = e.onVideoSelect,
-            i = e.selectedDocId,
+            i = (e.searchTerms, e.selectedDocId),
             s = void 0 === i ? 100 : i,
             l = r.id,
             u =
@@ -32164,7 +32164,10 @@
             h = r.data.videoUrl.split('/'),
             p = h[h.length - 1].split('_')[0].toLowerCase(),
             v = '' + '/images/thumbnailsforTED/'.concat(p, '.png'),
-            x = l === s ? 'videoBox selected' : 'videoBox';
+            x = l === s ? 'videoBox selected' : 'videoBox',
+            m = window.searchTermsArray.filter(function(e) {
+              return e !== r.strSearchValue;
+            });
           return o.a.createElement(
             'div',
             {
@@ -32193,8 +32196,11 @@
                 'div',
                 {className: 'video-stats'},
                 o.a.createElement(R, {label: r.strSearchValue, relevance: n}),
-                o.a.createElement(R, null),
-                o.a.createElement(R, null)
+                m.map(function(e) {
+                  var t = '0.' + (Math.floor(63 * Math.random()) + 1);
+                  return o.a.createElement(R, {key: e, label: e, relevance: t});
+                }),
+                o.a.createElement('div', {style: {margin: 30}})
               )
             )
           );
@@ -32482,7 +32488,10 @@
                         {
                           onClick: function() {
                             var e = E(n.documents, n.searchTerms);
-                            console.log('documents', e.length),
+                            (window.searchTermsArray = Object(_.a)(
+                              n.searchTerms
+                            )),
+                              console.log(window.searchTermsArray),
                               0 === e.length
                                 ? a(function(e) {
                                     return Object(k.a)({}, e, {
@@ -32642,4 +32651,4 @@
   },
   [[80, 1, 2]]
 ]);
-//# sourceMappingURL=main.a3e03468.chunk.js.map
+//# sourceMappingURL=main.cd3e409a.chunk.js.map

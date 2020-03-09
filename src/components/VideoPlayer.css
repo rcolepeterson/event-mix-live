@@ -3,3 +3,9 @@ video {
   height: auto;
   background: black;
 }
+
+.video-fake-hit {
+  width: 100%;
+  height: auto;
+  background: red;
+}
